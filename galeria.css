@@ -1,0 +1,94 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+}
+/* fejlec*/
+.fejlec{
+    display: flex;
+    background-color: black;
+    height: 120px;
+    flex-direction: row;
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    overflow: hidden;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+}
+.alap-left{
+    display: flex;
+    height: 120px;
+    width: 350px;
+    margin-right: auto;
+    padding-top: 3px;
+    color: white;
+}
+
+.alap-right{
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    gap: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    color: white;
+}
+
+
+.shopping{
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.item{
+    height: 120px;
+    width: auto;
+    /*margin-right: 10px;
+    margin-left: 10px;
+    transform: translateY(40%);*/
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
+
+.item:hover{
+    animation: valaszt 0.2s linear forwards;
+}
+
+.item0{
+    padding-right: 5px;
+    margin-right: 5px;
+
+}
+
+
+#szov{
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    /*transform: translateY(50%);*/
+
+}
+
+.alap-right a{
+    text-decoration: none;
+    color: grey;
+}
