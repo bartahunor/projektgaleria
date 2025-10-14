@@ -27,13 +27,16 @@ h1{
     overflow: hidden;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-
+    justify-content: space-between;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .alap-left{
     display: flex;
     height: 120px;
-    width: 350px;
-    margin-right: auto;
+    width: auto;
+    gap: 15px;
     padding-top: 3px;
     color: white;
 }
@@ -45,50 +48,88 @@ h1{
     align-items: center;
     height: 120px;
     gap: 20px;
-    margin-right: auto;
-    margin-left: auto;
-    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-
 .shopping{
-    margin-left: auto;
+
     margin-top: auto;
     margin-bottom: auto;
+    margin-right: 200px;
+}
+
+.shopping img {
+    height: 45px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.shopping img:hover {
+    transform: scale(1.1);
 }
 
 .item{
-    height: 120px;
+    height: auto;
     width: auto;
-    /*margin-right: 10px;
-    margin-left: 10px;
-    transform: translateY(40%);*/
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
-    
-}
-
-.item:hover{
-    animation: valaszt 0.2s linear forwards;
-}
-
-.item0{
-    padding-right: 5px;
-    margin-right: 5px;
-
-}
-
-
-#szov{
-    width: 100px;
-    align-items: center;
-    justify-content: center;
-    /*transform: translateY(50%);*/
-
+    margin-bottom: auto;
+    margin-top: auto;    
 }
 
 .alap-right a{
     text-decoration: none;
-    color: grey;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding: 6px 0;
+    font-family: 'Poppins', sans-serif;
 }
+
+.alap-right a::before,
+.alap-right a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: all 0.5s;
+}
+
+.alap-right a::before {
+  top: 0;
+  left: 0;
+}
+
+.alap-right a::after {
+  bottom: 0;
+  right: 0;
+}
+
+.alap-right a:hover::before {
+  width: 100%;
+  transition: width 0.25s ease-in-out;
+}
+
+.alap-right a:hover::after {
+  width: 100%;
+  transition: width 0.25s ease-in-out 0.25s;
+}
+
+.item0{
+    height: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+#szov{
+    width: 100px;
+}
+
+
+/*lablec
+.lablec{
+    background-color: black;
+    height: 250px;
+}*/
