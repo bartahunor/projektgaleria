@@ -127,6 +127,143 @@ h1{
     width: 100px;
 }
 
+/* subscribe 
+.subscribe{
+    position: fixed;
+    z-index: 1000;
+    width: 500px;
+    height: 150px;
+    background-color: black;
+    border: 1px solid red;
+    right: 0;
+    top: 20%;
+}
+
+.form-horizontal {
+  float: left;
+  max-width: 400px;
+  font-family: 'Lato';
+  font-weight: 400;
+}
+
+.form-control, 
+textarea {
+  max-width: 400px;
+  background-color: #000;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.send-button {
+  margin-top: 15px;
+  height: 34px;
+  width: 400px;
+  overflow: hidden;
+  transition: all .2s ease-in-out;
+}
+
+.alt-send-button {
+  width: 400px;
+  height: 34px;
+  transition: all .2s ease-in-out;
+}
+
+.send-text {
+  display: block;
+  margin-top: 10px;
+  font: 700 12px 'Lato', sans-serif;
+  letter-spacing: 2px;
+}
+
+.alt-send-button:hover {
+  transform: translate3d(0px, -29px, 0px);
+}*/
+.subscribe-panel {
+  position: fixed;
+  top: 19%;
+  right: -395px; /* alapból elrejtve */
+  width: 400px;
+  background: black;
+  color: white;
+  border: 2px solid white;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  transition: right 0.4s ease;
+  z-index: 2000;
+  font-family: 'Inter', sans-serif;
+  overflow: visible;
+}
+
+.subscribe-panel.active {
+  right: 0; /* amikor aktív, becsúszik */
+}
+
+/* Fül */
+.subscribe-tab {
+  position: absolute;
+  left: -230px;
+  top: 11%;
+  width: 187px;
+  height: 40px;
+  background: white;
+  color: black;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: right top;
+  box-shadow: 0 0 5px rgba(255,255,255,0.4);
+  z-index: 3000;
+  border: 2.5px solid white;
+}
+
+.subscribe-content {
+  padding: 13px;
+  padding-left: 20px;
+  
+}
+
+.subscribe-content h3 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.subscribe-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.subscribe-content input {
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  background: #222;
+  color: white;
+}
+
+.subscribe-content input:focus {
+  outline: 2px solid white;
+}
+
+.subscribe-content button {
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.subscribe-content button:hover {
+  background: gray;
+  color: white;
+}
 
 /* kep csúszó*/
 
