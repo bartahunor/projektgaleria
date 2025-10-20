@@ -1,0 +1,75 @@
+.jegyteto{
+    position: relative;
+    margin-top: 120px;
+    z-index: 0;
+}
+
+.jegyteto{
+  height: 60vh;
+  background: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%),
+    url('festmények/infinitum.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.jegyteto h1{
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    font-size: 6rem;
+    font-weight: 300;
+    padding-top: 300px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.jegyvasarlas{
+  padding-top: 40px;
+}
+
+.jegyvasarlas p{
+    padding-left: 300px;
+    padding-right: 300px;
+    font-size: 20px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.jegyvasarlas h2{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 500;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.jegyek{
+  position: relative;
+  height: 600px;
+  width: 600px;
+  float: left;
+  margin-left: 300px;
+  margin-bottom: 500px;
+}
+
+.jegy{
+  width: 600px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+.ar{
+  width: 200px;
+  height: 100px;
+}
+
+.arak{
+  position: relative;
+  height: 600px;
+  width: 600px;
+  float: right;
+  margin-right: 300px;
+  margin-bottom: 500px;
+}
+
