@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      padding: 40px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .faq {
+      margin-top: 20px;
+    }
+
+    details {
+      background: white;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      padding: 15px 20px;
+      border: 1px solid #ddd;
+      transition: all 0.3s ease;
+    }
+
+    summary {
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details[open] {
+      border-color: #007bff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    details p {
+      margin-top: 10px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* Optional: Add a + / - indicator */
+    summary::after {
+      content: '+';
+      float: right;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after {
+      content: '-';
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <h1>Frequently Asked Questions</h1>
+
+  <div class="faq">
+    <details>
+      <summary>What is your return policy?</summary>
+      <p>We offer a 30-day return policy on all items. Simply contact our support team to initiate a return.</p>
+    </details>
+
+    <details>
+      <summary>Do you ship internationally?</summary>
+      <p>Yes, we ship to most countries worldwide. Shipping fees and delivery times vary by destination.</p>
+    </details>
+
+    <details>
+      <summary>How can I track my order?</summary>
+      <p>After your order ships, you’ll receive an email with a tracking link so you can monitor delivery progress.</p>
+    </details>
+  </div>
+
+</body>
+</html>
