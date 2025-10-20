@@ -354,22 +354,21 @@ textarea {
 }
 
 .galeria-cim{
-    color: white;
-    position: absolute;
-    z-index: 10;
-    font-size: 3rem;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    text-align: left;
-    width: 600px;
-    transform: translateY(32%);
-    margin-left: 220px;
+  color: white;
+  position: absolute;
+  z-index: 10;
+  font-size: 3rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  text-align: left;
+  width: 600px;
+  transform: translateY(32%);
+  margin-left: 220px;
 }
 /* oldal */
 .oldalketto{
-    height: auto;
-    padding-bottom: 50px;
-    padding: 50px;
-
+  height: auto;
+  padding-bottom: 70px;
+  background-color: beige;
 }
 
 .bemutat{
@@ -377,11 +376,7 @@ textarea {
   flex-direction: column;
   align-items:baseline;
   justify-content: center;
-  padding-left: 80px;
-  padding-right: 50px;
-  
-
-
+  padding-left: 50px;
 }
 .kepcim{
   display: flex;
@@ -402,7 +397,6 @@ textarea {
 }
 
 #bemutat-szov{
-  width: 100%;
   text-align: justify;
 
 }
@@ -411,10 +405,12 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 50px;
+  padding-top: 120px;
+  padding-right: 50px;
 }
 .bemutat-kep img{
   height: 500px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
 }
 
 
@@ -467,6 +463,7 @@ textarea {
     background-color: black;
     height: 400px;
     color: white;
+    min-height: 50vh;
 }
 
 .lablec h3{
