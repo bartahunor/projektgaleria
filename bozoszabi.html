@@ -13,16 +13,26 @@
     <div id="sub"></div>
 
     
-
 <div class="svg-container">
   <svg viewBox="0 0 800 400" class="svg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
     <defs>
       <clipPath id="clipWave">
         <path id="curve" d="M 800 300 Q 400 350 0 300 L 0 0 L 800 0 L 800 300 Z" />
       </clipPath>
+
+
+      <linearGradient id="fadeLeftToCenter" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="black" stop-opacity="0.7"/>
+        <stop offset="100%" stop-color="black" stop-opacity="0"/>
+      </linearGradient>
+
+      <linearGradient id="fadeRightToCenter" x1="1" y1="0" x2="0" y2="0">
+        <stop offset="0%" stop-color="black" stop-opacity="0.7"/>
+        <stop offset="100%" stop-color="black" stop-opacity="0"/>
+      </linearGradient>
     </defs>
 
-    <!-- A kép, ami a hullámformába van "vágva" -->
+
     <image 
       href="festmények/bozoszabi.jpg" 
       x="0" 
@@ -32,6 +42,10 @@
       clip-path="url(#clipWave)"
       preserveAspectRatio="xMidYMid slice"
     />
+
+    <rect x="0" y="0" width="400" height="400" fill="url(#fadeLeftToCenter)" clip-path="url(#clipWave)" />
+
+    <rect x="400" y="0" width="400" height="400" fill="url(#fadeRightToCenter)" clip-path="url(#clipWave)" />
   </svg>
 </div>
 
@@ -43,27 +57,83 @@
     <main>
         <div class="egesz11">
             <div class="ism">
-                <div class="iratszabi">
-                    <p style="font-size: 30px;">Bozó Szabolcs kortárs magyar festőművész, aki művészetében gyakran alkalmaz expresszív, erőteljes színeket és dinamikus formákat. Munkái között megtalálhatók tájképek, portrék és absztrakt kompozíciók is, melyekben gyakran jelenik meg az érzelmi töltet és a mély gondolatiság. Szabolcs alkotásai hazai és nemzetközi kiállításokon is szerepelnek, és elismerik őt a modern festészet meghatározó alakjaként. Stílusa az egyéni kifejezésmódra és a technikai sokszínűségre épít.</p>
+                <div class="kepescucc scroll-anim">
+                    <div class="szabikep"> <img src="festmények/szabika3.jpeg" alt="Bozó Szabolcs" style="box-shadow: 15px 15px 3px #34100b;"></div>
                 </div>
-                <div class="kepescucc">
-                    <div class="szabikep"> <img src="szabika.png" alt="Bozó Szabolcs"></div>
+                <div class="iratszabi scroll-anim">
+                    <p style="font-size: 30px;">Bozó Szabolcs kortárs magyar festőművész, aki művészetében gyakran alkalmaz expresszív, erőteljes színeket és dinamikus formákat. Munkái között megtalálhatók tájképek, portrék és absztrakt kompozíciók is, melyekben gyakran jelenik meg az érzelmi töltet és a mély gondolatiság. Szabolcs alkotásai hazai és nemzetközi kiállításokon is szerepelnek, és elismerik őt a modern festészet meghatározó alakjaként. Stílusa az egyéni kifejezésmódra és a technikai sokszínűségre épít.</p>
                 </div>
             </div>
             <div class="tobbi">
-                <div class="muvek"></div>
                 <div class="naptar">
-                    <tr>
-                        <td>Hétfő</td>
-                        <td>Kedd</td>
-                        <td>Szerda</td>
-                        <td>Csütörtök</td>
-                        <td>Péntek</td>
-                        <td>Szombat</td>
-                        <td>Vasárnap</td>
-                    </tr>
-                    <tr></tr>
+                    <div class="napszov scroll-anim">
+                        <h2>KIÁLLÍTÁSOK<br>IDŐPONTJAI</h2>
 
+                    </div>
+                    <div class="calendar scroll-anim">
+                         <div class="header">
+                            <div class="more">November</div>
+                            <div class="more">2025</div>
+
+                            </div>
+
+                            <div class="weekdays">
+                            <div>H</div>
+                            <div>K</div>
+                            <div>SZ</div>
+                            <div>CS</div>
+                            <div>P</div>
+                            <div>SZ</div>
+                            <div>V</div>
+                            </div>
+
+                            <div class="days">
+                            <div class="prev-month">27</div>
+                            <div class="prev-month">28</div>
+                            <div class="prev-month">29</div>
+                            <div class="prev-month">30</div>
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+
+                            <div>4</div>
+                            <div>5</div>
+                            <div>6</div>
+                            <div>7</div>
+                            <div>8</div>
+                            <div>9</div>
+                            <div>10</div>
+
+                            <div>11</div>
+                            <div>12</div>
+                            <div>13</div>
+                            <div>14</div>
+                            <div>15</div> 
+                            <div>16</div>
+                            <div>17</div>
+
+                            <div>18</div>
+                            <div>19</div>
+                            <div>20</div>
+                            <div>21</div>
+                            <div>22</div>
+                            <div>23</div>
+                            <div>24</div>
+
+                            <div>25</div>
+                            <div>26</div>
+                            <div>27</div>
+                            <div>28</div>
+                            <div>29</div> 
+                            <div>30</div>
+                            <div>31</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+                    
                 </div>
             </div>
 
