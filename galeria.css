@@ -127,61 +127,11 @@ h1{
     width: 100px;
 }
 
-/* subscribe 
-.subscribe{
-    position: fixed;
-    z-index: 1000;
-    width: 500px;
-    height: 150px;
-    background-color: black;
-    border: 1px solid red;
-    right: 0;
-    top: 20%;
-}
-
-.form-horizontal {
-  float: left;
-  max-width: 400px;
-  font-family: 'Lato';
-  font-weight: 400;
-}
-
-.form-control, 
-textarea {
-  max-width: 400px;
-  background-color: #000;
-  color: #fff;
-  letter-spacing: 1px;
-}
-
-.send-button {
-  margin-top: 15px;
-  height: 34px;
-  width: 400px;
-  overflow: hidden;
-  transition: all .2s ease-in-out;
-}
-
-.alt-send-button {
-  width: 400px;
-  height: 34px;
-  transition: all .2s ease-in-out;
-}
-
-.send-text {
-  display: block;
-  margin-top: 10px;
-  font: 700 12px 'Lato', sans-serif;
-  letter-spacing: 2px;
-}
-
-.alt-send-button:hover {
-  transform: translate3d(0px, -29px, 0px);
-}*/
+/* subscribe */
 .subscribe-panel {
   position: fixed;
   top: 19%;
-  right: -395px; /* alapból elrejtve */
+  right: -400px; /* alapból elrejtve */
   width: 400px;
   background: black;
   color: white;
@@ -369,6 +319,8 @@ textarea {
   height: auto;
   padding-bottom: 70px;
   background-color: beige;
+  padding-left: 150px;
+  padding-right: 150px;
 }
 
 .bemutat{
@@ -376,18 +328,19 @@ textarea {
   flex-direction: column;
   align-items:baseline;
   justify-content: center;
-  padding-left: 50px;
+
 }
 .kepcim{
   display: flex;
   flex-direction: row;
   align-items: end;
-  height: 400px;
+  gap: 20px;
+  height: 250px;
   width: 100%;
 
 }
 .stars{
-  height: 300px;
+  height: 200px;
 
 }
 
@@ -398,18 +351,18 @@ textarea {
 
 #bemutat-szov{
   text-align: justify;
-
+  padding-right: 10px;
 }
 
 .bemutat-kep{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 120px;
-  padding-right: 50px;
+
+
 }
 .bemutat-kep img{
-  height: 500px;
+  height: 400px;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
 }
 
@@ -458,48 +411,11 @@ textarea {
   transform: translateY(0);
 }
 
-/* oldalharom
+/* oldalharom*/
 .oldalharom {
-  background-color: #fee440;
+  background-color: #8B582E;
   position: relative;
-  height: 50vh;
-  backdrop-filter: blur(6px);
-
-}
-svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  filter: blur(6px);
-  background: transparent;
-  overflow: hidden;
-}
-
-.muvesz{
-  position: relative;
-  z-index: 2;
-  background: transparent ;
-  border: none;
-
-}
-
-.fokusz{
-  position: relative;
-  z-index: 2;
-  background: transparent ;
-  border: none;
-}
-
-.oldalharom .row {
-  margin: 0;
-}*/
-.oldalharom {
-  background-color: #fee440;
-  position: relative;
-  height: 50vh;
+  height: 800px;
   overflow: hidden; /* 👈 FONTOS! levágja az SVG blur szélét */
 }
 
@@ -516,7 +432,9 @@ svg {
   left: -5%;    /* balra toljuk */
   width: 110%;  /* kissé szélesebb */
   height: 110%;
+  
 }
+
 
 .oldalharom .muvesz,
 .oldalharom .fokusz {
@@ -527,14 +445,220 @@ svg {
   color: white;
 }
 
+
 .oldalharom .fokusz{
-  padding: 30px;
+  margin: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+  border-bottom: 2px solid white;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.oldalharom .fokusz h1 {
+  font-size: 3rem;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;      
+}
+
+.kiscsillag{
+  height: 60px;
+  margin-bottom: 5px;
 }
 
 .oldalharom .row {
   padding-left: 50px;
   padding-right: 50px;
 }
+
+:root {
+  --purple: #603f8b;
+  --aqua: #b4fee7;
+  --violet: #a16ae8;
+  --fuchsia: #fd49a0;
+  --white: #efefef;
+  --black: #222;
+  --trueBlack: #000;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+.main {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.cards {
+  display: grid;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+  gap: 4rem;
+  
+}
+
+.cards_item {
+  display: flex;
+}
+
+.card_image {
+  display: flex;
+  height: 250px;
+}
+
+.card_image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.1); /* szinte átlátszó fehér */
+  backdrop-filter: blur(10px); /* elmosódás */
+  -webkit-backdrop-filter: blur(10px); /* Safari támogatás */
+
+  border-radius: 5px 25px 5px 50px;
+  transition: transform 0.1s linear, box-shadow 0.2s;
+
+  /* finom árnyék a térhatáshoz */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card_text:focus,
+.card:focus {
+  outline: 2px dashed var(--aqua);
+}
+
+.card:focus,
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.2);
+}
+
+.card_content {
+  padding: 0.5rem 1rem 1rem;
+  color: var(--white);
+}
+
+
+
+.card_text {
+
+  line-height: 1.5;
+  text-size-adjust: 0.2px;
+  padding: 0 1rem;
+}
+
+
+
+@media (min-width: 480px) {
+  .card_text {
+    overflow: auto;
+    max-height: 20rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--aqua) var(--violet);
+  }
+
+  .card_text::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .card_text::-webkit-scrollbar-track {
+    background: var(--violet);
+  }
+
+  .card_text::-webkit-scrollbar-thumb {
+    background-color: var(--aqua);
+  }
+}
+
+.card_text strong {
+  color: var(--aqua);
+}
+
+
+.note {
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: 900;
+  background-image: linear-gradient(
+    -45deg,
+    transparent 10%,
+    var(--aqua) 10.5%,
+    var(--aqua) 90%,
+    transparent 90.5%
+  );
+  color: var(--black);
+  font-size: 1.3em;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+@keyframes fly-in {
+  0% {
+    top: 0;
+    right: 0;
+    font-size: 1.325rem;
+  }
+
+  25% {
+    top: 0;
+    right: -200%;
+    font-size: 1.325rem;
+  }
+
+  26% {
+    font-size: 2rem;
+  }
+
+  100% {
+    top: 2rem;
+    right: 0;
+    font-size: 2rem;
+  }
+}
+
+@keyframes fly-out {
+  0% {
+    top: 2rem;
+    right: 0;
+    font-size: 2rem;
+  }
+
+  50% {
+    top: 0;
+    right: -200%;
+    font-size: 1.325rem;
+  }
+
+  100% {
+    top: 0;
+    right: 0;
+    font-size: 1.325rem;
+  }
+}
+
+.oldalharom .rolunkb{
+  width: 60%;
+}
+
 
 
 
