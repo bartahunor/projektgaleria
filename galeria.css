@@ -458,6 +458,86 @@ textarea {
   transform: translateY(0);
 }
 
+/* oldalharom
+.oldalharom {
+  background-color: #fee440;
+  position: relative;
+  height: 50vh;
+  backdrop-filter: blur(6px);
+
+}
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  filter: blur(6px);
+  background: transparent;
+  overflow: hidden;
+}
+
+.muvesz{
+  position: relative;
+  z-index: 2;
+  background: transparent ;
+  border: none;
+
+}
+
+.fokusz{
+  position: relative;
+  z-index: 2;
+  background: transparent ;
+  border: none;
+}
+
+.oldalharom .row {
+  margin: 0;
+}*/
+.oldalharom {
+  background-color: #fee440;
+  position: relative;
+  height: 50vh;
+  overflow: hidden; /* 👈 FONTOS! levágja az SVG blur szélét */
+}
+
+.oldalharom svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  filter: blur(3px);
+  background: transparent;
+  display: block;
+  top: -5%;     /* felfelé toljuk */
+  left: -5%;    /* balra toljuk */
+  width: 110%;  /* kissé szélesebb */
+  height: 110%;
+}
+
+.oldalharom .muvesz,
+.oldalharom .fokusz {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.oldalharom .fokusz{
+  padding: 30px;
+}
+
+.oldalharom .row {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+
+
 /*lablec*/
 .lablec{
     background-color: black;
