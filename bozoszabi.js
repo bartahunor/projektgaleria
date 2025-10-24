@@ -146,3 +146,10 @@ images.forEach(img => {
 });
 
 animate();
+
+let translateY = 100 - progress * 100 * speedFactor;
+
+// korlátozás, hogy ne menjen a footer fölé
+translateY = Math.min(50, Math.max(0, translateY));
+
+fest.style.transform = `translateY(${translateY}%)`;
