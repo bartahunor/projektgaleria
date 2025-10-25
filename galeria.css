@@ -424,7 +424,7 @@ h1{
 
 /* oldalharom*/
 .oldalharom {
-  background-color: #8B582E;
+  background-color: #695C4A;
   position: relative;
   height: 800px;
   overflow: hidden; /* 👈 FONTOS! levágja az SVG blur szélét */
@@ -744,7 +744,7 @@ h1{
 
 .webteto {
     position: relative;
-    height: 30%;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
