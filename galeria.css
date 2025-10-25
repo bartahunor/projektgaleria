@@ -131,7 +131,7 @@ h1{
 .subscribe-panel {
   position: fixed;
   top: 19%;
-  right: -400px; /* alapból elrejtve */
+  right: -393px; /* alapból elrejtve */
   width: 400px;
   background: black;
   color: white;
@@ -151,9 +151,9 @@ h1{
 /* Fül */
 .subscribe-tab {
   position: absolute;
-  left: -230px;
-  top: 11%;
-  width: 187px;
+  left: -223px;
+  top: 10%;
+  width: 190px;
   height: 40px;
   background: white;
   color: black;
@@ -685,18 +685,19 @@ h1{
     display: inline-block;          /* csak szöveg szélesség */
     border-bottom: 2px solid white;
     padding-bottom: 4px;
-
+    margin-bottom: 15px;
 }
 
 .lablec ul {
     list-style: none; /* eltávolítja a pontokat */
     padding: 0;
-    margin-bottom: 5px;
+    margin: 0;
+    margin-top: 15px;
 }
 
 .lablec li {
-    margin-bottom: 4px;
-    list-style: none;
+  padding: 10px;
+  list-style: none;
 }
 
 
@@ -736,7 +737,7 @@ h1{
 
 /* webshop - háttér*/
 .webshopold {
-  height: 1200px;
+  height: auto;
   margin-top: 120px;
   background-color: #d6c8b1;
 }
@@ -777,9 +778,10 @@ h1{
   padding: 30px;
   border-radius: 10px;
   width: 70%;
-  margin: 50px auto;
+  margin: auto;
   border: 5px solid black;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  margin-top: 50px;
 }
 
 .legord{
@@ -839,3 +841,47 @@ h1{
     height: 20px;      
     cursor: pointer;   
 }
+
+.eladoak{
+  background-color: #d6c8b1;
+  height: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.eladoak .card{width:350px;background:#fff;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,.1);transition:.3s;margin: auto;overflow:hidden;position:relative;cursor:pointer}
+.eladoak .card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.15)}
+.eladoak .badge{position:absolute;top:10px;right:10px;background: linear-gradient(to right,  rgba(169,3,41,1) 0%,rgba(196,72,72,1) 44%,rgba(170,34,56,1) 100%);color:#fff;padding:5px 10px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,.2);z-index:10}
+.eladoak .tilt{overflow:hidden}
+.eladoak .img{height:200px;overflow:hidden}
+.eladoak .img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.eladoak .card:hover .img img{transform:scale(1.05)}
+.eladoak .info{padding:20px}
+.eladoak .cat{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#71717A;margin-bottom:5px}
+.eladoak .title{font-size:18px;font-weight:700;color:#18181B;margin:0 0 10px;letter-spacing:-.5px}
+.eladoak .desc{font-size:13px;color:#52525B;line-height:1.4;margin-bottom:12px}
+.eladoak .feats{display:flex;gap:6px;margin-bottom:15px}
+.eladoak .feat{font-size:10px;background:#F4F4F5;color:#71717A;padding:3px 8px;border-radius:10px;font-weight:500}
+.eladoak .bottom{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.eladoak .price{display:flex;flex-direction:column}
+.eladoak .old{font-size:13px;text-decoration:line-through;color:#A1A1AA;margin-bottom:2px}
+.eladoak .new{font-size:20px;font-weight:700;color:#18181B}
+.eladoak .btn{background:linear-gradient(45deg,#18181B,#27272A);color:#fff;border:none;border-radius:10px;padding:8px 15px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;transition:.3s;box-shadow:0 3px 10px rgba(0,0,0,.1)}
+.eladoak .btn:hover{background:linear-gradient(45deg,#27272A,#3F3F46);transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,0,0,.15)}
+.eladoak .btn:before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);transition:.5s}
+.eladoak .btn:hover:before{left:100%}
+.eladoak .icon{transition:transform .3s}
+.eladoak .btn:hover .icon{transform:rotate(-10deg) scale(1.1)}
+.eladoak .meta{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #F4F4F5;padding-top:12px}
+.eladoak .rating{display:flex;align-items:center;gap:2px}
+.eladoak .rcount{margin-left:6px;font-size:11px;color:#71717A}
+.eladoak .stock{font-size:11px;font-weight:600;color:#22C55E}
+@media (max-width:400px){.card{width:90%}.title{font-size:16px}.img{height:180px}.bottom{flex-direction:column;align-items:flex-start;gap:10px}.price{margin-bottom:5px}.btn{width:100%;justify-content:center}}

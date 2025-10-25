@@ -480,7 +480,7 @@ textarea {
 .subscribe-panel {
   position: fixed;
   top: 19%;
-  right: -395px; /* alapból elrejtve */
+  right: -393px; /* alapból elrejtve */
   width: 400px;
   background: black;
   color: white;
@@ -500,9 +500,9 @@ textarea {
 /* Fül */
 .subscribe-tab {
   position: absolute;
-  left: -230px;
+  left: -227px;
   top: 11%;
-  width: 187px;
+  width: 190px;
   height: 40px;
   background: white;
   color: black;
@@ -522,10 +522,11 @@ textarea {
 .subscribe-content {
   padding: 13px;
   padding-left: 20px;
-  
+  height: 165px;
 }
 
 .subscribe-content h3 {
+  margin-top: 20px;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -563,14 +564,12 @@ textarea {
   background: gray;
   color: white;
 }
-
 /* oldal*/
 .oldal{
   height: 1200px;
   width: 100%;
 }
 
-/*lablec*/
 .lablec{
     background-color: black;
     height: 400px;
@@ -582,18 +581,23 @@ textarea {
     display: inline-block;          /* csak szöveg szélesség */
     border-bottom: 2px solid white;
     padding-bottom: 4px;
+    margin-bottom: 15px;
+}
 
+.lablec p{
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .lablec ul {
     list-style: none; /* eltávolítja a pontokat */
     padding: 0;
-    margin-bottom: 5px;
+    margin: 0;
 }
 
 .lablec li {
-    margin-bottom: 4px;
-    list-style: none;
+  padding: 10px;
+  list-style: none;
 }
 
 
@@ -609,11 +613,12 @@ textarea {
 }
 
 .info{
-    padding-top: 40px;
+    padding-top: 50px;
 }
 
+
 .navigacio{
-    padding-top: 40px;
+    padding-top: 50px;
 }
 
 .map{
