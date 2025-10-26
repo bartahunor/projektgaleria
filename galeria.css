@@ -857,25 +857,25 @@ h1{
   padding-right: 150px;
 }
 
-.eladoak .card{width:350px;background:#fff;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,.1);transition:.3s;margin: auto;overflow:hidden;position:relative;cursor:pointer}
+.eladoak .card{width:350px;background: black;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,.1);transition:.3s;margin: auto;overflow:hidden;position:relative;cursor:pointer; color: white; height: 450px;}
 .eladoak .card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.15)}
 .eladoak .badge{position:absolute;top:10px;right:10px;background: linear-gradient(to right,  rgba(169,3,41,1) 0%,rgba(196,72,72,1) 44%,rgba(170,34,56,1) 100%);color:#fff;padding:5px 10px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,.2);z-index:10}
 .eladoak .tilt{overflow:hidden}
-.eladoak .img{height:200px;overflow:hidden}
+.eladoak .img{height:250px;overflow:hidden}
 .eladoak .img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
 .eladoak .card:hover .img img{transform:scale(1.05)}
 .eladoak .info{padding:20px}
-.eladoak .cat{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#71717A;margin-bottom:5px}
-.eladoak .title{font-size:18px;font-weight:700;color:#18181B;margin:0 0 10px;letter-spacing:-.5px}
-.eladoak .desc{font-size:13px;color:#52525B;line-height:1.4;margin-bottom:12px}
+.eladoak .cat{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#fff;margin-bottom:5px}
+.eladoak .title{font-size:18px;font-weight:700;color:#fff;margin:0 0 10px;letter-spacing:-.5px;text-transform:uppercase;}
+.eladoak .desc{font-size:13px;color: #fff;;line-height:1.4;margin-bottom:12px}
 .eladoak .feats{display:flex;gap:6px;margin-bottom:15px}
 .eladoak .feat{font-size:10px;background:#F4F4F5;color:#71717A;padding:3px 8px;border-radius:10px;font-weight:500}
 .eladoak .bottom{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
 .eladoak .price{display:flex;flex-direction:column}
 .eladoak .old{font-size:13px;text-decoration:line-through;color:#A1A1AA;margin-bottom:2px}
-.eladoak .new{font-size:20px;font-weight:700;color:#18181B}
-.eladoak .btn{background:linear-gradient(45deg,#18181B,#27272A);color:#fff;border:none;border-radius:10px;padding:8px 15px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;transition:.3s;box-shadow:0 3px 10px rgba(0,0,0,.1)}
-.eladoak .btn:hover{background:linear-gradient(45deg,#27272A,#3F3F46);transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,0,0,.15)}
+.eladoak .new{font-size:20px;font-weight:700;color:#fff}
+.eladoak .btn{background:linear-gradient(45deg,#fff,#fff);color:#000;border:none;border-radius:10px;padding:8px 15px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;transition:.3s;box-shadow:0 3px 10px rgba(0,0,0,.1)}
+.eladoak .btn:hover{background:linear-gradient(45deg,#fff,#fff);transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,0,0,.15)}
 .eladoak .btn:before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);transition:.5s}
 .eladoak .btn:hover:before{left:100%}
 .eladoak .icon{transition:transform .3s}
