@@ -1,0 +1,128 @@
+{
+  "1": {
+    "artist": "Kalán Viktória",
+    "title": "Egy nő (86)",
+    "desc": "Vegyes technika - Vászon",
+    "price": "350.000 Ft",
+    "image": "festmények/kalanviktoriegyno.jpg"
+  },
+  "2": {
+    "artist": "Kalán Viktória",
+    "title": "Egy nő (1)",
+    "desc": "Olaj - Vászon",
+    "price": "350.000 Ft",
+    "image": "festmények/kvkep6.jpg"
+  },
+  "3": {
+    "artist": "Kalán Viktória",
+    "title": "Cím nélkül",
+    "desc": "Vegyes technika – vászon",
+    "price": "350.000 Ft",
+    "image": "festmények/kvkep2.jpg"
+  },
+  "4": {
+    "artist": "Kalán Viktória",
+    "title": "Ez egy tök szomoru kép",
+    "desc": "Vegyes technika - Vászon",
+    "price": "370.000 Ft",
+    "image": "festmények/kvkep1.jpg"
+  },
+  "5": {
+    "artist": "Kalán Viktória",
+    "title": "Kimenő hívás",
+    "desc": "Vegyes technika - Vászon",
+    "price": "95.000 Ft",
+    "image": "festmények/kvkep3.jpg"
+  },
+  "6": {
+    "artist": "Marosi Panni",
+    "title": "Bonding",
+    "desc": "Olaj, vászon",
+    "price": "350.000 Ft",
+    "image": "festmények/mpkep5.jpg"
+  },
+  "7": {
+    "artist": "Marosi Panni",
+    "title": "Ethereal dream about a day by the Pannonian sea",
+    "desc": "Olaj, vászon",
+    "price": "350.000 Ft",
+    "image": "festmények/mpkep6.jpg"
+  },
+  "8": {
+    "artist": "Marosi Panni",
+    "title": "Early summer memories",
+    "desc": "Olaj, vászon",
+    "price": "350.000 Ft",
+    "image": "festmények/mpkep1.jpg"
+  },
+  "9": {
+    "artist": "Marosi Panni",
+    "title": "Liminal being II.",
+    "desc": "Olaj, vászon",
+    "price": "350.000 Ft",
+    "image": "festmények/mpkep2.jpg"
+  },
+  "10": {
+    "artist": "Marosi Panni",
+    "title": "And then I cut one of my braids",
+    "desc": "Olaj, vászon",
+    "price": "350.000 Ft",
+    "image": "festmények/mpkep3.jpg"
+  },
+  "11": {
+    "artist": "Joseph Szabó",
+    "title": "Ég és föld között",
+    "desc": "Olaj, falemez",
+    "price": "350.000 Ft",
+    "image": "festmények/eg_es_fold_kozott.jpg"
+  },
+  "12": {
+    "artist": "Lakner László",
+    "title": "Infinitum",
+    "desc": "Olaj, vászon",
+    "price": "350.000 Ft",
+    "image": "festmények/infinitum.jpg"
+  },
+  "13": {
+    "artist": "Lakner László",
+    "title": "Liliomok",
+    "desc": "Olaj, vászon",
+    "price": "2.500.000 Ft",
+    "image": "festmények/limlomok.jpg"
+  },
+  "14": {
+    "artist": "Lakner László",
+    "title": "Metamorfózis",
+    "desc": "Olaj, vászon",
+    "price": "35.000.000 Ft",
+    "image": "festmények/metamorfozis.jpg"
+  },
+  "15": {
+    "artist": "Tihanyi Lajos",
+    "title": "Fülep Lajos arcképe",
+    "desc": "Olaj, vászon",
+    "price": "2.500.000 Ft",
+    "image": "festmények/noiarckep.jpg"
+  },
+  "16": {
+    "artist": "Tihanyi Lajos",
+    "title": "Tájkép",
+    "desc": "Olaj, vászon",
+    "price": "2.500.000 Ft",
+    "image": "festmények/tajkep.jpg"
+  },
+  "17": {
+    "artist": "Ef Zámbó István",
+    "title": "Ördöglétra",
+    "desc": "Merített papír",
+    "price": "90.000 Ft",
+    "image": "festmények/ordogletra.jpg"
+  },
+  "18": {
+    "artist": "Reigl Judit",
+    "title": "Robbanás",
+    "desc": "Olaj, vászon",
+    "price": "50.000.000 Ft",
+    "image": "festmények/robbanas.jpg"
+  }
+}

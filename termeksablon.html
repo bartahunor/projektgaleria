@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap-grid.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="galeria.css">
+    <title>Linea Contemporary Gallery - Termék</title>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="sub"></div>
+
+    <div class="col-md-12 product-page">
+        <div class="row justify-content-center">
+            <div class="col-md-6 termekleiras">
+                <div class="pcim">
+                    <h1 id="partist"></h1>
+                    <h1> - </h1>
+                    <h1 id="ptitle"></h1>
+                </div>
+                <img id="pimage" src="" alt="">
+                <br><p>Technika: </p><p id="pdesc"></p><br>
+                <div class="eredet">
+                    <br><p>A termékhez eredetiséget igazoló bizonyítvány jár!</p><br>
+                    <img src="favpng_0980330f5d8cc0c75e21e6e805b7f8fb.png" alt="" id="authentic">
+                </div>
+                <div class="areskosar">
+                    <h2 id="pprice"></h2>
+                    <button class="btn">
+                            <span>KOSÁRBA</span>
+                            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/>
+                                <line x1="3" y1="6" x2="21" y2="6"/>
+                                <path d="M16 10a4 4 0 01-8 0"/>
+                            </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-4 ajanlott">
+                <div class="fokusz">
+                    <h1>EZ IS ÉRDEKELHET</h1>
+                    <img src="stars-removebg-preview.png" alt="" class="kiscsillag">
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footer"></div>
+
+    <script src="minden.js"></script>
+    <script>
+        const id = localStorage.getItem('selectedProduct');
+
+        fetch('termekek.json')
+            .then(res => res.json())
+            .then(products => {
+                const product = products[id];
+                if (!product) {
+                    document.body.innerHTML = "<h2>A termék nem található!</h2>";
+                    return;
+                }
+
+                document.title = product.title;
+                document.getElementById('ptitle').textContent = product.title;
+                document.getElementById('partist').textContent = product.artist;
+                document.getElementById('pdesc').textContent = product.desc;
+                document.getElementById('pprice').textContent = product.price;
+                document.getElementById('pimage').src = product.image;
+                document.getElementById('pimage').alt = product.title;
+            });
+    </script>
+</body>
+</html>

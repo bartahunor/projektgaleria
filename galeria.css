@@ -1027,3 +1027,107 @@ h1{
 .alapito p {
   text-align: justify
 }
+
+
+/* termék sablon */
+.product-page{
+  height: 1000px;
+  background-color: #d6c8b1;
+  padding-top: 50px;
+  margin-top: 120px;
+  padding-bottom: 50px;
+}
+
+.termekleiras{
+  background-color: black;
+  border-radius:15px;
+  color: white;
+  height: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-right: 50px;
+}
+.pcim{
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  border-bottom: white solid 3px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: white;
+}
+
+.pcim h1{
+  display: inline;
+}
+#pimage{
+  height: 450px;
+  margin-bottom: 20px;
+}
+
+#authentic{
+  height: 40px;
+  overflow: hidden;
+  margin-left: 100px;
+}
+
+.termekleiras p{
+  display: inline;
+}
+
+.eredet{
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  height: 50px;
+  width: 100%;
+}
+
+#pprice{
+  margin: 0;
+  font-size: 2rem;
+}
+
+.product-page .btn{background:linear-gradient(45deg,#fff,#fff);color:#000;border:none;border-radius:10px;padding:8px 15px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;transition:.3s;box-shadow:0 3px 10px rgba(0,0,0,.1); height: 40px;}
+.product-page .btn:hover{background:linear-gradient(45deg,#fff,#fff);transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,0,0,.15)}
+.product-page .btn:before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);transition:.5s}
+.product-page .btn:hover:before{left:100%}
+.product-page .icon{transition:transform .3s}
+.product-page .btn:hover .icon{transform:rotate(-10deg) scale(1.1)}
+
+.areskosar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: white solid 3px;
+  margin-top: 30px;
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+
+.ajanlott{
+  background-color: black;
+  border-radius:15px;
+  color: white;
+  height: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.ajanlott .fokusz{
+  border-bottom: 2px solid white;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.ajanlott .fokusz h1 {
+  font-size: 2rem;
+  margin-bottom: 0;
+  text-transform: uppercase;     
+}
+
+.ajanlott .kiscsillag{
+  height: 50px;
+  margin: 0;
+}

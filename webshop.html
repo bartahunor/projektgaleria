@@ -50,13 +50,13 @@
                 <div class="checkboxok">
                     <label><input type="checkbox" name="price1"> 5.000 - 100.000 Ft</label>
                     <label><input type="checkbox" name="price2"> 100.000 - 1.000.000 Ft</label>
-                    <label><input type="checkbox" name="price3"> 1.000.000 - 10.000.000 Ft</label>
+                    <label><input type="checkbox" name="price3"> 1.000.000 Ft felett</label>
                 </div>
             </form>
         </div>
     </div>
     <div class="col-md-12 eladoak">
-        <div class="card">
+        <div class="card" data-id="1">
             <div class="badge">ÚJDONSÁG</div>
             <div class="tilt">
                 <div class="img"><img src="festmények/kalanviktoriegyno.jpg" alt="Premium Laptop"></div>
@@ -84,7 +84,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="2">
             <div class="badge">ÚJDONSÁG</div>
             <div class="tilt">
                 <div class="img"><img src="festmények/kvkep6.jpg" alt="Premium Laptop"></div>
@@ -112,7 +112,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="3">
             <div class="badge">ÚJDONSÁG</div>
             <div class="tilt">
                 <div class="img"><img src="festmények/kvkep2.jpg" alt="Premium Laptop"></div>
@@ -140,7 +140,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="4">
             <div class="badge">ÚJDONSÁG</div>
             <div class="tilt">
                 <div class="img"><img src="festmények/kvkep1.jpg" alt="Premium Laptop"></div>
@@ -168,7 +168,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="5">
             <div class="badge">ÚJDONSÁG</div>
             <div class="tilt">
                 <div class="img"><img src="festmények/kvkep3.jpg" alt="Premium Laptop"></div>
@@ -196,7 +196,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="6">
             <div class="badge">ÚJDONSÁG</div>
             <div class="tilt">
                 <div class="img"><img src="festmények/mpkep5.jpg" alt="Premium Laptop"></div>
@@ -224,7 +224,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="7">
             
             <div class="tilt">
                 <div class="img"><img src="festmények/mpkep6.jpg" alt="Premium Laptop"></div>
@@ -252,7 +252,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="8">
 
             <div class="tilt">
                 <div class="img"><img src="festmények/mpkep1.jpg" alt="Premium Laptop"></div>
@@ -280,7 +280,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="9">
 
             <div class="tilt">
                 <div class="img"><img src="festmények/mpkep2.jpg" alt="Premium Laptop"></div>
@@ -308,7 +308,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="10">
 
             <div class="tilt">
                 <div class="img"><img src="festmények/mpkep3.jpg" alt="Premium Laptop"></div>
@@ -336,7 +336,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="11">
 
             <div class="tilt">
                 <div class="img"><img src="festmények/eg_es_fold_kozott.jpg" alt="Premium Laptop"></div>
@@ -364,7 +364,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="12">
 
             <div class="tilt">
                 <div class="img"><img src="festmények/infinitum.jpg" alt="Premium Laptop"></div>
@@ -392,7 +392,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="13">
 
             <div class="tilt">
                 <div class="img"><img src="festmények/limlomok.jpg" alt="Premium Laptop"></div>
@@ -420,7 +420,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="14">
 
             <div class="tilt">
                 <div class="img"><img src="festmények/metamorfozis.jpg" alt="Premium Laptop"></div>
@@ -448,7 +448,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="15">
 
             <div class="tilt">
                 <div class="img"><img src="festmények/noiarckep.jpg" alt="Premium Laptop"></div>
@@ -476,7 +476,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="16">
 
             <div class="tilt">
                 <div class="img"><img src="festmények/tajkep.jpg" alt="Premium Laptop"></div>
@@ -504,7 +504,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="17">
 
             <div class="tilt">
                 <div class="img"><img src="festmények/ordogletra.jpg" alt="Premium Laptop"></div>
@@ -532,7 +532,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="18">
 
             <div class="tilt">
                 <div class="img"><img src="festmények/robbanas.jpg" alt="Premium Laptop"></div>
@@ -567,5 +567,16 @@
     <div id="footer"></div>
 
     <script src="minden.js"></script>
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                const id = card.dataset.id; // lekérjük az ID-t
+                // elmentjük a böngészőbe
+                localStorage.setItem('selectedProduct', id);
+                // átirányítjuk a product.html-re
+                window.location.href = 'termeksablon.html';
+            });
+        });
+    </script>
 </body>
 </html>
