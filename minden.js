@@ -91,3 +91,79 @@ function isInViewport(el) {
 
   document.addEventListener('scroll', checkScrollAnimations);
   document.addEventListener('DOMContentLoaded', checkScrollAnimations);
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Kiválasztjuk az összes "KOSÁRBA" gombot
+    const buttons = document.querySelectorAll('.card .btn');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.stopPropagation(); // ne vigyen át a termékoldalra
+
+            const card = button.closest('.card');
+            const id = card.dataset.id;
+            const title = card.querySelector('.title').textContent;
+            const artist = card.querySelector('.cat').textContent;
+            const price = card.querySelector('.price .new').textContent;
+            const image = card.querySelector('img').getAttribute('src');
+
+            const product = { id, title, artist, price, image };
+
+            // Kosár lekérése a localStorage-ból (ha nincs, akkor üres tömb)
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Ellenőrizzük, hogy már benne van-e
+            const existing = cart.find(item => item.id === id);
+            if (!existing) {
+                cart.push(product);
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+            }
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cartContainer = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    const clearButton = document.getElementById('clear-cart');
+
+    // Ha nincs ilyen elem, akkor nem a kosár oldalon vagyunk → kilép
+    if (!cartContainer) return;
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length === 0) {
+        cartContainer.innerHTML = '<p>A kosár üres.</p>';
+        return;
+    }
+
+    let total = 0;
+    cart.forEach(item => {
+        const priceNumber = parseInt(item.price.replace(/\D/g, ''));
+        total += priceNumber;
+
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('cart-item');
+        productDiv.innerHTML = `
+            <img src="${item.image}" alt="${item.title}" width="100">
+            <div>
+                <h3>${item.title}</h3>
+                <p>${item.artist}</p>
+                <p>${item.price}</p>
+            </div>
+        `;
+        cartContainer.appendChild(productDiv);
+    });
+
+    cartTotal.innerHTML = `<h3>Összesen: ${total.toLocaleString('hu-HU')} Ft</h3>`;
+
+    if (clearButton) {
+        clearButton.addEventListener('click', () => {
+            localStorage.removeItem('cart');
+            window.location.reload();
+        });
+    }
+});
