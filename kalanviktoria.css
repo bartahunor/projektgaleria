@@ -29,7 +29,7 @@ body {
   background: #695C4A;
   color: #fff;
   position: relative;
-
+  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -51,8 +51,8 @@ main {
     to bottom, 
     #695C4A 0%,       
     #695C4A 50%,      
-    beige 70%,      
-    beige 100%      
+    #d6c8b1 70%,      
+    #d6c8b1 100%      
   );
   padding: 0;
   position: relative;
@@ -146,6 +146,9 @@ small {
   z-index: 10;
 }
 
+.napszov p{
+  margin-left: 70px;
+}
 
 .napszov{
   font-size: 50px;
@@ -160,7 +163,7 @@ small {
   padding: 20px;
   width: 550px;
   margin-top: 200px;
-  margin-left: 10px;
+  margin-left: 200px;
   height: 400px;
 }
 
@@ -220,7 +223,7 @@ small {
 }
 
 .festmenysz {
-  background-color: beige;
+  background-color: #d6c8b1;
   width: 100%;
   height: 600px;
   position: relative;

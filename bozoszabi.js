@@ -97,7 +97,7 @@ function lerpelFestmenysz() {
         let translateY = 100 - progress * 100 * speedFactor;
 
         // jobban rámenni: 0% alá is engedjük, max -20%
-        translateY = Math.min(100, Math.max(-30, translateY));
+        translateY = Math.min(100, Math.max(-50, translateY));
 
         fest.style.transform = `translateY(${translateY}%)`;
     } else {

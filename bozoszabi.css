@@ -29,7 +29,7 @@ body {
   background: #651f16;
   color: #fff;
   position: relative;
-
+  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -50,8 +50,8 @@ main {
     to bottom, 
     #651f16 0%,       
     #651f16 50%,      
-    beige 70%,      
-    beige 100%      
+    #d6c8b1 70%,      
+    #d6c8b1 100%      
   );
   padding: 0;
   position: relative;
@@ -135,8 +135,9 @@ small {
 
 
 .tobbi{
+  display: flex;
   background-color: black;
-  height: 850px;
+  height: 800px;
   position: relative;
   transform: translateY(100%);
   transition: transform 0.5s ease-out; 
@@ -145,11 +146,17 @@ small {
   z-index: 10;
 }
 
+.napszov p{
+margin-left: 70px;
+
+}
+
 
 .napszov{
   font-size: 50px;
   margin: 70px;
   height: 50px;
+
 }
 
 .calendar {
@@ -159,7 +166,7 @@ small {
   padding: 20px;
   width: 550px;
   margin-top: 200px;
-  margin-left: 10px;
+  margin-left: 200px;
   height: 400px;
 }
 
@@ -219,7 +226,7 @@ small {
 }
 
 .festmenysz {
-  background-color: beige;
+  background-color: #d6c8b1;
   width: 100%;
   height: 600px;
   position: relative;
