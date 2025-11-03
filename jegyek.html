@@ -27,7 +27,66 @@
         <br>
         <h2>Jegytípusok</h2>
     </div>
-    
+    <div class="container">
+
+    <section class="ticket-table">
+      <div class="header">
+        <div>Jegytípus</div>
+        <div>Ár</div>
+        <div>Infó</div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div style="font-weight:700">Felnőtt</div>
+          <div class="meta">Teljes árú jegy</div>
+        </div>
+        <div class="price">3 500 Ft</div>
+        <div class="actions">
+          <div class="counter">
+            <button class="counter-btn minus">−</button>
+            <div class="counter-number">0</div>
+            <button class="counter-btn plus">+</button>
+          </div>
+          <button class="btn">Vásárlás</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div style="font-weight:700">Diák</div>
+          <div class="meta">Diákigazolvány felmutatásával</div>
+        </div>
+        <div class="price">2 300 Ft</div>
+        <div class="actions">
+          <div class="counter">
+            <button class="counter-btn minus">−</button>
+            <div class="counter-number">0</div>
+            <button class="counter-btn plus">+</button>
+          </div>
+          <button class="btn">Vásárlás</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div style="font-weight:700">Gyermek (6-14 év)</div>
+          <div class="meta">6 éves kor alatt ingyenes</div>
+        </div>
+        <div class="price">1 200 Ft</div>
+        <div class="actions">
+          <div class="counter">
+            <button class="counter-btn minus">−</button>
+            <div class="counter-number">0</div>
+            <button class="counter-btn plus">+</button>
+          </div>
+          <button class="btn">Vásárlás</button>
+        </div>
+      </div>
+
+    </section>
+  </div>
+    <!--
     <table>
         <tr>
             <td class="jegy">
@@ -35,6 +94,13 @@
                 <p>18 éven felülieknek</p>
             </td>
             <td class="ar"><h1>4000 Ft</h1></td>
+            <td>
+                <div class="counter">
+                    <button class="btn" id="minus">−</button>
+                    <div class="number" id="count">0</div>
+                    <button class="btn" id="plus">+</button>
+                </div>
+            </td>
         </tr>
         <tr>
             <td class="jegy">
@@ -42,6 +108,13 @@
                 <p>6 éven aluliaknak</p>
             </td>
             <td class="ar"><h1>2000 Ft</h1></td>
+            <td>
+                <div class="counter">
+                    <button class="btn" id="minus">−</button>
+                    <div class="number" id="count">0</div>
+                    <button class="btn" id="plus">+</button>
+                </div>
+            </td>
         </tr>
         <tr>
             <td class="jegy">
@@ -49,6 +122,13 @@
                 <p>Érvényes diákigazolvánnyal</p>
             </td>
             <td class="ar"><h1>3000 Ft</h1></td>
+            <td>
+                <div class="counter">
+                    <button class="btn" id="minus">−</button>
+                    <div class="number" id="count">0</div>
+                    <button class="btn" id="plus">+</button>
+                </div>
+            </td>
         </tr>
         <tr>
             <td class="jegy">
@@ -56,13 +136,40 @@
                 <p>65 éven felülieknek</p>
             </td>
             <td class="ar"><h1>3000 Ft</h1></td>
+            <td>
+                <div class="counter">
+                    <button class="btn" id="minus">−</button>
+                    <div class="number" id="count">0</div>
+                    <button class="btn" id="plus">+</button>
+                </div>
+            </td>
         </tr>
     </table>
-    
+    -->
 
 
     <div id="footer"></div>
 
+    <script>
+    document.querySelectorAll('.row').forEach(row => {
+      const minus = row.querySelector('.minus');
+      const plus = row.querySelector('.plus');
+      const number = row.querySelector('.counter-number');
+      let count = 0;
+
+      plus.addEventListener('click', () => {
+        count++;
+        number.textContent = count;
+      });
+
+      minus.addEventListener('click', () => {
+        if (count > 0) count--;
+        number.textContent = count;
+      });
+    });
+  </script>
+
     <script src="minden.js"></script>
+
 </body>
 </html>
