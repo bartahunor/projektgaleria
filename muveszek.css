@@ -85,7 +85,9 @@
 /*! Flickity v1.0.0
 http://flickity.metafizzy.co
 ---------------------------------------------- */
-
+.egyebmuveszek{
+  margin-top: 50px;
+}
 .flickity-enabled {
   position: relative;
 }
@@ -939,7 +941,7 @@ textarea {
 }
 
 .oldalharom .rolunkb{
-  width: 60%;
+  width: 70%;
 }
 
 
