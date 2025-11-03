@@ -4,6 +4,10 @@
     color: #333;
 }
 
+body{
+    background-color: #d6c8b1;
+}
+
 .faq {
     max-width: 600px;
     padding-top: 10px;

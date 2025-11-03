@@ -4,6 +4,11 @@
     z-index: 0;
 }
 
+body{
+  background-color: #d6c8b1;
+  
+}
+
 .jegyteto{
   height: 60vh;
   background: 
@@ -15,13 +20,12 @@
 }
 
 .jegyteto h1{
+    color: #fff;
+    padding-top: 15vw;
+    padding-bottom: 20vw;
     text-align: center;
-    color: white;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    font-size: 6rem;
-    font-weight: 300;
-    padding-top: 300px;
-    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    font-size: 90px;
 }
 
 .jegyvasarlas{
@@ -31,7 +35,8 @@
 .jegyvasarlas p{
     padding-left: 300px;
     padding-right: 300px;
-    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
     text-align: justify;
     line-height: 1.5;
 }
@@ -44,32 +49,38 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-.jegyek{
-  position: relative;
-  height: 600px;
-  width: 600px;
-  float: left;
-  margin-left: 300px;
-  margin-bottom: 500px;
-}
-
 .jegy{
   width: 600px;
   height: 100px;
-  border: 1px solid black;
+  border: 1px solid #5e5a4265;
+  padding: 10px;
+  border-right: 0px;
 }
 
 .ar{
   width: 200px;
   height: 100px;
+  border: 1px solid #5e5a4265;
+  padding: 10px;
 }
 
-.arak{
-  position: relative;
-  height: 600px;
-  width: 600px;
-  float: right;
-  margin-right: 300px;
-  margin-bottom: 500px;
+.jegy h1{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  font-weight: 100;
 }
 
+.ar h1{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  font-weight: 100;
+  text-align: center;
+}
+
+table{
+  margin-left: 550px;
+  margin-right: 550px;
+  background-color: beige;
+  margin-bottom: 100px;
+  border: #5e5a4265 1px solid;
+}
