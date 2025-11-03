@@ -44,6 +44,7 @@ h1{
 .alap-right{
     display: flex;
     width: auto;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     height: 120px;
@@ -318,7 +319,7 @@ h1{
 .oldalketto{
   height: auto;
   padding-bottom: 70px;
-  background-color: beige;
+  background-color: #d6c8b1;
   padding-left: 150px;
   padding-right: 150px;
 }
@@ -667,7 +668,7 @@ h1{
 }
 
 .oldalharom .rolunkb{
-  width: 60%;
+  width: 70%;
 }
 
 
@@ -888,11 +889,15 @@ h1{
 
 
 /* rólunk */
+.rolunkteto{
+  padding-bottom: 50px;
+  background: #d6c8b1;
+}
 .rolunkszekcio {
   margin-top: 120px;
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 600px;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -1061,7 +1066,7 @@ h1{
 }
 #pimage{
   height: 450px;
-  margin-bottom: 20px;
+  margin-bottom: 70px;
 }
 
 #authentic{
@@ -1080,6 +1085,7 @@ h1{
   margin: 0;
   height: 50px;
   width: 100%;
+  
 }
 
 #pprice{
@@ -1099,7 +1105,7 @@ h1{
   flex-direction: row;
   justify-content: space-between;
   border-top: white solid 3px;
-  margin-top: 30px;
+  margin-top: 60px;
   padding-top: 20px;
   margin-bottom: 30px;
 }
@@ -1130,4 +1136,91 @@ h1{
 .ajanlott .kiscsillag{
   height: 50px;
   margin: 0;
+}
+
+.ajanlotitemek{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.ajanlotitemek img{
+  height: 200px;
+  margin-top: 30px;
+}
+.ajanlotitemek h2{
+  text-transform: uppercase;
+}
+
+/* kosár oldal */ 
+.cartoldal{
+  margin-top: 120px;
+  height: auto;
+  background-color: #d6c8b1;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.cartoldal .row {
+  display: flex;
+  justify-content: center; /* vízszintesen középre teszi */
+}
+
+.adataid,
+.vasarlas{
+  border-radius: 15px;
+  background-color: #000;
+  color: white;
+  padding: 0 50px 50px 50px;
+  margin-bottom: 50px;
+  position: relative; /* Fontos, hogy a gomb ehhez igazodjon */
+  padding-bottom: 100px; /* Hagyjunk helyet a gombnak */
+}
+
+.vasarlas{
+  margin-right: 50px;
+}
+
+.cartoldal h1{
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.cartoldal .btn{background:linear-gradient(45deg,#fff,#fff);color:#000;border:none;border-radius:10px;padding:8px 15px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;transition:.3s;box-shadow:0 3px 10px rgba(0,0,0,.1); height: 40px; position: absolute;  bottom: 20px;
+  right: 30px;}
+.cartoldal .btn:hover{background:linear-gradient(45deg,#fff,#fff);transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,0,0,.15)}
+.cartoldal .btn:before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);transition:.5s}
+.cartoldal .btn:hover:before{left:100%}
+
+
+.adataid h1 {
+    color: white;
+}
+
+.adataid .form-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: white;
+}
+
+.adataid input{
+  background-color: #000;
+  margin-bottom: 20px;
+}
+
+.adataid .form-control {
+    border-radius: 10px;
+    border: 1px solid rgb(58, 58, 58);
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.adataid .form-control:focus {
+    border-color: white;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+    outline: none;
+}
+
+.adataid textarea.form-control {
+    resize: none;
 }
