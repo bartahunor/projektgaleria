@@ -17,27 +17,25 @@
     <div class="col-md-12 jegyteto">
         <h1>BELÉPŐJEGYEK</h1>
     </div>
-
-    <div class="col-md-12 ">
-        <div class="row">
-          <div class="col-md-6 jegyvasarlas">
+    <div class="jegyvasarlas">
+            <h2>Jegyvásárlás</h2>
             <p>Fedezd fel a kortárs művészet legizgalmasabb világát a Linea Contemporary Gallery-ben! </p>
             <p>Vásárolj jegyet online, és biztosítsd a helyed a legújabb kiállításokra, tárlatvezetésekre és különleges programokra.</p>
             <p>A belépőjegy az adott napon egyszeri belépésre jogosít. Az időszaki kiállításokra szóló belépőjeggyel az adott napon az állandó kiállítás is megtekinthető – az aznapi nyitva tartási időben.
             </p>
             <p>Az állandó kiállítás megtekintéséhez javasolt látogatási idő: 1,5-3 óra.</p>
-            <br>
-          </div>
+            
+    </div>
 
-          <div class="col-md-6">
-            <section class="ticket-table">
+    <div class="col-md-12">
+              <section class="ticket-table">
               <div class="header">
                 <div>Jegytípus</div>
                 <div>Ár</div>
                 <div>Infó</div>
               </div>
 
-              <div class="row">
+              <div class="sor">
                 <div>
                   <div style="font-weight:700; font-size: 1.5rem;">Felnőtt</div>
                   <div class="meta">Teljes árú jegy</div>
@@ -60,7 +58,7 @@
                 </div>
               </div>
 
-              <div class="row">
+              <div class="sor">
                 <div>
                   <div style="font-weight:700; font-size: 1.5rem;">Diák</div>
                   <div class="meta">Diákigazolvány felmutatásával</div>
@@ -83,7 +81,7 @@
                 </div>
               </div>
 
-              <div class="row">
+              <div class="sor">
                 <div>
                   <div style="font-weight:700; font-size: 1.5rem;">Gyermek (6-14 év)</div>
                   <div class="meta">6 éves kor alatt ingyenes</div>
@@ -107,79 +105,17 @@
               </div>
 
             </section>
-          </div>
-        </div>
-    </div>
-    <div class="container">
+          </div>            
 
     
-  </div>
-    <!--
-    <table>
-        <tr>
-            <td class="jegy">
-                <h1>FELNŐTT</h1>
-                <p>18 éven felülieknek</p>
-            </td>
-            <td class="ar"><h1>4000 Ft</h1></td>
-            <td>
-                <div class="counter">
-                    <button class="btn" id="minus">−</button>
-                    <div class="number" id="count">0</div>
-                    <button class="btn" id="plus">+</button>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td class="jegy">
-                <h1>GYERMEK</h1>
-                <p>6 éven aluliaknak</p>
-            </td>
-            <td class="ar"><h1>2000 Ft</h1></td>
-            <td>
-                <div class="counter">
-                    <button class="btn" id="minus">−</button>
-                    <div class="number" id="count">0</div>
-                    <button class="btn" id="plus">+</button>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td class="jegy">
-                <h1>DIÁK</h1>
-                <p>Érvényes diákigazolvánnyal</p>
-            </td>
-            <td class="ar"><h1>3000 Ft</h1></td>
-            <td>
-                <div class="counter">
-                    <button class="btn" id="minus">−</button>
-                    <div class="number" id="count">0</div>
-                    <button class="btn" id="plus">+</button>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td class="jegy">
-                <h1>NYUGDÍJAS</h1>
-                <p>65 éven felülieknek</p>
-            </td>
-            <td class="ar"><h1>3000 Ft</h1></td>
-            <td>
-                <div class="counter">
-                    <button class="btn" id="minus">−</button>
-                    <div class="number" id="count">0</div>
-                    <button class="btn" id="plus">+</button>
-                </div>
-            </td>
-        </tr>
-    </table>
-    -->
+    </div>
+   
 
 
     <div id="footer"></div>
 
-    <script>
-    document.querySelectorAll('.row').forEach(row => {
+  <script>
+    document.querySelectorAll('.sor').forEach(row => {
       const minus = row.querySelector('.minus');
       const plus = row.querySelector('.plus');
       const number = row.querySelector('.counter-number');

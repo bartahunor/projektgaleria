@@ -94,76 +94,211 @@ function isInViewport(el) {
 
 
 
+function getCart() {
+  return JSON.parse(localStorage.getItem('cart')) || [];
+}
+
+function saveCart(cart) {
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function addToCart(product) {
+  let cart = getCart();
+  const existing = cart.find(item => item.id === product.id);
+
+  if (existing) {
+    existing.quantity += product.quantity;
+  } else {
+    cart.push(product);
+  }
+
+  saveCart(cart);
+}
+
+/* ----------------------------
+   🖼️ WEBSHOP – Termék hozzáadása
+---------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
-    // Kiválasztjuk az összes "KOSÁRBA" gombot
-    const buttons = document.querySelectorAll('.card .btn');
+  const buttons = document.querySelectorAll('.card .btn');
+  buttons.forEach(button => {
+    button.addEventListener('click', (event) => {
+      event.stopPropagation();
 
-    buttons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            event.stopPropagation(); // ne vigyen át a termékoldalra
+      const card = button.closest('.card');
+      const rawId = card.dataset.id;                  // pl. "12"
+      const id = 'product_' + rawId;                  // pl. "product_12" — egységes formátum
+      const title = card.querySelector('.title').textContent.trim();
+      const artist = card.querySelector('.cat').textContent.trim();
+      const price = card.querySelector('.price .new').textContent.trim();
+      const image = card.querySelector('img').getAttribute('src');
 
-            const card = button.closest('.card');
-            const id = card.dataset.id;
-            const title = card.querySelector('.title').textContent;
-            const artist = card.querySelector('.cat').textContent;
-            const price = card.querySelector('.price .new').textContent;
-            const image = card.querySelector('img').getAttribute('src');
-
-            const product = { id, title, artist, price, image };
-
-            // Kosár lekérése a localStorage-ból (ha nincs, akkor üres tömb)
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-            // Ellenőrizzük, hogy már benne van-e
-            const existing = cart.find(item => item.id === id);
-            if (!existing) {
-                cart.push(product);
-                localStorage.setItem('cart', JSON.stringify(cart));
-
-            }
-        });
+      const product = { id, title, artist, price, image, quantity: 1 };
+      addToCart(product);
     });
+  });
 });
-
+/* ----------------------------
+   🎟️ JEGYEK – Kosárba helyezés
+---------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
-    const cartContainer = document.getElementById('cart-items');
-    const cartTotal = document.getElementById('cart-total');
-    const clearButton = document.getElementById('clear-cart');
+  const ticketButtons = document.querySelectorAll('.ticket-table .btn');
 
-    // Ha nincs ilyen elem, akkor nem a kosár oldalon vagyunk → kilép
-    if (!cartContainer) return;
+  ticketButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const row = button.closest('.sor');
+      const title = row.querySelector('div > div:first-child').textContent.trim();
+      const price = row.querySelector('.price').textContent.trim();
+      const quantity = parseInt(row.querySelector('.counter-number').textContent) || 0;
 
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    if (cart.length === 0) {
-        cartContainer.innerHTML = '<p>A kosár üres.</p>';
+      if (quantity === 0) {
         return;
-    }
+      }
 
-    let total = 0;
-    cart.forEach(item => {
-        const priceNumber = parseInt(item.price.replace(/\D/g, ''));
-        total += priceNumber;
+      const id = 'ticket_' + title.toLowerCase().replace(/\s+/g, '_');
+      const ticket = { id, title, artist: 'Belépőjegy', price, image: '', quantity };
 
-        const productDiv = document.createElement('div');
-        productDiv.classList.add('cart-item');
-        productDiv.innerHTML = `
-            <img src="${item.image}" alt="${item.title}" width="100">
-            <div>
-                <h3>${item.title}</h3>
-                <p>${item.artist}</p>
-                <p>${item.price}</p>
-            </div>
-        `;
-        cartContainer.appendChild(productDiv);
+      addToCart(ticket);
+
+      row.querySelector('.counter-number').textContent = '0';
     });
-
-    cartTotal.innerHTML = `<h3>Összesen: ${total.toLocaleString('hu-HU')} Ft</h3>`;
-
-    if (clearButton) {
-        clearButton.addEventListener('click', () => {
-            localStorage.removeItem('cart');
-            window.location.reload();
-        });
-    }
+  });
 });
+
+/* ----------------------------
+   🖼️ TERMÉKOLDAL – Kosárba gomb működése
+---------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+  const addButton = document.querySelector('.termekleiras .btn');
+  if (!addButton) return;
+
+  addButton.addEventListener('click', () => {
+    // Ha van korábban elmentett data-id (amikor a kártyára kattintottak), használjuk
+    const rawId = localStorage.getItem('selectedProduct'); // pl. "12"
+    const id = rawId ? ('product_' + rawId) : ('product_' + document.getElementById('ptitle').textContent.trim().toLowerCase().replace(/\s+/g,'_'));
+
+    const title = document.getElementById('ptitle').textContent.trim();
+    const artist = document.getElementById('partist').textContent.trim();
+    const price = document.getElementById('pprice').textContent.trim();
+    const image = document.getElementById('pimage').getAttribute('src');
+
+    const product = { id, title, artist, price, image, quantity: 1 };
+
+    // Kosár lekérése, frissítés (duplikáció-ellenőrzés)
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existing = cart.find(item => item.id === id);
+    if (existing) {
+      existing.quantity = (existing.quantity || 0) + 1;
+    } else {
+      cart.push(product);
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    if (typeof updateCartCount === 'function') updateCartCount();
+  });
+});
+
+/* ----------------------------
+   🎁 AJÁNLOTT TERMÉKEK – Kosárba gomb működése
+---------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+  const suggestedButtons = document.querySelectorAll('.ajanlotitemek .btn');
+  if (!suggestedButtons.length) return;
+
+  suggestedButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      const images = document.querySelectorAll('.ajanlotitemek img');
+      const titles = document.querySelectorAll('.ajanlotitemek h2');
+      const prices = document.querySelectorAll('.ajanlotitemek h3');
+
+      const image = images[index].getAttribute('src');
+      const titleFull = titles[index].textContent.trim();
+      const price = prices[index].textContent.trim();
+
+      const [artist, title] = titleFull.split(' - ');
+      const id = 'suggested_' + title.toLowerCase().replace(/\s+/g, '_');
+      const product = { id, title, artist, price, image, quantity: 1 };
+
+      // 🔹 Kosár kezelése
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push(product);
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      if (typeof updateCartCount === 'function') updateCartCount();
+    });
+  });
+});
+
+/* ----------------------------
+   🛒 KOSÁR OLDAL MEGJELENÍTÉS
+---------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+  const cartContainer = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  const clearButton = document.getElementById('clear-cart');
+
+  if (!cartContainer) return;
+
+  const cart = getCart();
+
+  if (cart.length === 0) {
+    cartContainer.innerHTML = '<p>A kosár üres.</p>';
+    return;
+  }
+
+  let total = 0;
+  cartContainer.innerHTML = '';
+
+  cart.forEach(item => {
+    const priceNumber = parseInt(item.price.replace(/\D/g, '')) || 0;
+    const subtotal = priceNumber * (item.quantity || 1);
+    total += subtotal;
+
+    const productDiv = document.createElement('div');
+    productDiv.classList.add('cart-item');
+    productDiv.innerHTML = `
+      <div class="cart-item-content">
+        ${item.image ? `<img src="${item.image}" alt="${item.title}" width="100">` : ''}
+        <div>
+          <h3>${item.title}</h3>
+          ${item.artist ? `<p>${item.artist}</p>` : ''}
+          <p>${item.price}</p>
+          <p>Mennyiség: ${item.quantity || 1} db</p>
+        </div>
+      </div>
+    `;
+    cartContainer.appendChild(productDiv);
+  });
+
+  cartTotal.innerHTML = `<h3>Összesen: ${total.toLocaleString('hu-HU')} Ft</h3>`;
+
+  if (clearButton) {
+    clearButton.addEventListener('click', () => {
+      localStorage.removeItem('cart');
+      window.location.reload();
+    });
+  }
+});
+
+/* ----------------------------
+   🧮 KOSÁR SZÁMLÁLÓ FRISSÍTÉSE
+---------------------------- */
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const count = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+  const countEl = document.getElementById('cart-count');
+  if (countEl) countEl.textContent = count;
+}
+
+// oldal betöltéskor frissítjük
+document.addEventListener('DOMContentLoaded', updateCartCount);
+
+// és amikor bármi kosárba kerül:
+const oldAddToCart = addToCart;
+addToCart = function(product) {
+  oldAddToCart(product);
+  updateCartCount();
+};

@@ -29,7 +29,12 @@ body{
 }
 
 .jegyvasarlas{
-  padding-top: 40px;
+  width: 70%;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  padding: 10px 30px 10px 30px;
+  margin: 50px auto 70px auto;
 }
 
 .jegyvasarlas p{
@@ -39,10 +44,12 @@ body{
 }
 
 .jegyvasarlas h2{
-    text-align: center;
-    font-size: 4rem;
-    font-weight: 500;
+    display: inline-block;
+    font-size: 3rem;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    border-bottom: 3px solid white;
+    padding-bottom: 8px;
+    text-transform: uppercase;
 }
 
 .jegy{
@@ -74,8 +81,6 @@ body{
 }
 
 table{
-  margin-left: 550px;
-  margin-right: 550px;
   background-color: beige;
   margin-bottom: 100px;
   border: #5e5a4265 1px solid;
@@ -83,11 +88,6 @@ table{
 
 
 
-    .container{
-      width:100%;
-      max-width:900px;
-      margin:0 auto;
-    }
 
     h1{font-size:20px;margin:0 0 16px;text-align:center}
     p.lead{color:var(--muted);margin:0 0 24px;text-align:center}
@@ -101,10 +101,11 @@ table{
       margin-bottom: 100px;
       color: white;
       border-radius: 15px;
-      width: 1000px;
+      width: 70%;
+      margin: 0 auto 70px auto;
     }
 
-    .header, .row{
+    .header, .sor{
       display:grid;
       grid-template-columns: 2fr 1fr 1fr; 
       align-items:center;
@@ -123,8 +124,8 @@ table{
 
     }
 
-    .row{border-bottom:1px dashed var(--border);}
-    .row:last-child{border-bottom:0}
+    .sor{border-bottom:1px dashed var(--border);}
+    .sor:last-child{border-bottom:0}
 
     .price{font-weight:700;font-size:1.2rem;text-align:left;}
     .meta{color:var(--muted);font-size:1rem}
@@ -182,3 +183,5 @@ table{
 .ticket-table .btn:hover:before{left:100%}
 .ticket-table .icon{transition:transform .3s}
 .ticket-table .btn:hover .icon{transform:rotate(-10deg) scale(1.1)}
+
+
