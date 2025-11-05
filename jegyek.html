@@ -27,7 +27,7 @@
             
     </div>
 
-    <div class="col-md-12">
+    <div class="col-md-12" id="jegyvasarlotable">
               <section class="ticket-table">
               <div class="header">
                 <div>Jegytípus</div>
@@ -114,24 +114,24 @@
 
     <div id="footer"></div>
 
-  <script>
-    document.querySelectorAll('.sor').forEach(row => {
-      const minus = row.querySelector('.minus');
-      const plus = row.querySelector('.plus');
-      const number = row.querySelector('.counter-number');
-      let count = 0;
+    <script>
+      document.querySelectorAll('.sor').forEach(row => {
+        const minus = row.querySelector('.minus');
+        const plus = row.querySelector('.plus');
+        const number = row.querySelector('.counter-number');
+        let count = 0;
 
-      plus.addEventListener('click', () => {
-        count++;
-        number.textContent = count;
-      });
+        plus.addEventListener('click', () => {
+          count++;
+          number.textContent = count;
+        });
 
-      minus.addEventListener('click', () => {
-        if (count > 0) count--;
-        number.textContent = count;
+        minus.addEventListener('click', () => {
+          if (count > 0) count--;
+          number.textContent = count;
+        });
       });
-    });
-  </script>
+    </script>
 
     <script src="minden.js"></script>
 

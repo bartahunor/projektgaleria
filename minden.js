@@ -93,7 +93,7 @@ function isInViewport(el) {
   document.addEventListener('DOMContentLoaded', checkScrollAnimations);
 
 
-
+/*
 function getCart() {
   return JSON.parse(localStorage.getItem('cart')) || [];
 }
@@ -108,6 +108,31 @@ function addToCart(product) {
 
   if (existing) {
     existing.quantity += product.quantity;
+  } else {
+    cart.push(product);
+  }
+
+  saveCart(cart);
+}*/
+function getCart() {
+  return JSON.parse(localStorage.getItem('cart')) || [];
+}
+
+function saveCart(cart) {
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function addToCart(product) {
+  if (!product) return;
+  // biztosítsuk, hogy legyen id és quantity
+  product.id = product.id || ('product_' + (product.title || '').toLowerCase().replace(/\s+/g,'_'));
+  product.quantity = parseInt(product.quantity, 10) || 1;
+
+  let cart = getCart();
+  const existing = cart.find(item => item.id === product.id);
+
+  if (existing) {
+    existing.quantity = (existing.quantity || 0) + product.quantity;
   } else {
     cart.push(product);
   }
@@ -137,6 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
 /* ----------------------------
    🎟️ JEGYEK – Kosárba helyezés
 ---------------------------- */
@@ -302,3 +328,34 @@ addToCart = function(product) {
   oldAddToCart(product);
   updateCartCount();
 };
+
+
+window.addEventListener("DOMContentLoaded", async () => {
+  await includeHTML("header", "header.html");
+  await includeHTML("footer", "footer.html");
+  await includeHTML("sub", "subscribe.html");
+
+  // ... (a többi inicializációs kódod: subscribePanel, eventek stb.)
+
+  // MOST, miután a header be van illesztve, biztonságosan frissítjük a számlálót
+  if (typeof updateCartCount === 'function') updateCartCount();
+});
+
+
+
+
+/* ----------------------
+Többszöri hozzá adás tiltás
+-------------------------*/
+document.querySelectorAll('.eladoak .btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.classList.add('clicked');
+    btn.disabled = true;
+  });
+});
+document.querySelectorAll('.product-page .btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.classList.add('clicked');
+    btn.disabled = true;
+  });
+});

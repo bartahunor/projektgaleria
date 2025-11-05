@@ -1,7 +1,7 @@
 #faqh1 {
     text-align: center;
-    margin-top: 150px;
-    color: #333;
+    margin-top: 170px;
+    color: black;
 }
 
 body{
@@ -10,10 +10,11 @@ body{
 
 .faq {
     max-width: 600px;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 40px;
     display: block;
     margin: auto;
+    height: 80vh;
 }
 
 details {
