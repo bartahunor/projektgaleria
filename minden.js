@@ -14,43 +14,39 @@ async function includeHTML(id, file) {
   }
 }
 
-/*
-DOMContentLoaded: ez az esemény akkor fut le, amikor az oldal HTML-je teljesen betöltődött, de a képek még nem feltétlenül.
-await includeHTML(...): várja, hogy az adott fájl teljesen be legyen illesztve, mielőtt a következő sor futna. Így biztos, hogy a következő kód már a DOM-ban találja az újonnan beszúrt elemeket.
-*/
+
+
+
 window.addEventListener("DOMContentLoaded", async () => {
+  // ✅ 1. Include HTML-ek betöltése (meg kell várni őket!)
   await includeHTML("header", "header.html");
   await includeHTML("footer", "footer.html");
   await includeHTML("sub", "subscribe.html");
 
+  // ✅ 2. Most már léteznek a subscribe elemek, így elérhetjük őket
   const subscribePanel = document.getElementById('subscribePanel');
   const subscribeTab = document.getElementById('subscribeTab');
   const subscribeForm = document.getElementById('subscribeForm');
 
-  /*
-  if(subscribeTab && subscribePanel): ellenőrizzük, hogy az elemek léteznek. Ez fontos, mert csak a betöltés után érhetők el.
-  addEventListener('click', ...): amikor a felhasználó rákattint a fülre:
-  classList.toggle('active'): hozzáadja vagy eltávolítja az active osztályt a panelhez.
-  A CSS-ben az active osztály jobbról beúsztatja a panelt, tehát a feliratkozó form láthatóvá válik.
-  */
-  if(subscribeTab && subscribePanel){
+  // ✅ 3. Feliratkozás panel nyitása / zárása
+  if (subscribeTab && subscribePanel) {
     subscribeTab.addEventListener('click', () => {
       subscribePanel.classList.toggle('active');
+      console.log('subscribePanel toggled:', subscribePanel.classList);
     });
   }
 
-  /*
-  e.preventDefault(): megakadályozza, hogy a form ténylegesen elküldje az adatokat és újratöltse az oldalt.
-  subscribePanel.classList.remove('active'): bezárja a panelt.
-  subscribeForm.reset(): törli a form mezőit (név, email).
-  */
-  if(subscribeForm){
+  // ✅ 4. Form elküldése → bezárás és reset
+  if (subscribeForm) {
     subscribeForm.addEventListener('submit', (e) => {
       e.preventDefault();
       subscribePanel.classList.remove('active');
       subscribeForm.reset();
     });
   }
+
+  // ✅ 5. Ha van kosár számláló, frissítsük
+  if (typeof updateCartCount === 'function') updateCartCount();
 });
 
 
@@ -330,16 +326,7 @@ addToCart = function(product) {
 };
 
 
-window.addEventListener("DOMContentLoaded", async () => {
-  await includeHTML("header", "header.html");
-  await includeHTML("footer", "footer.html");
-  await includeHTML("sub", "subscribe.html");
 
-  // ... (a többi inicializációs kódod: subscribePanel, eventek stb.)
-
-  // MOST, miután a header be van illesztve, biztonságosan frissítjük a számlálót
-  if (typeof updateCartCount === 'function') updateCartCount();
-});
 
 
 

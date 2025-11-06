@@ -14,11 +14,12 @@ body{
     padding-bottom: 40px;
     display: block;
     margin: auto;
-    height: 80vh;
+    height: auto;
 }
 
 details {
-    background: white;
+    background: black;
+    color: white;
     border-radius: 8px;
     margin-bottom: 10px;
     padding: 15px 20px;
@@ -38,13 +39,13 @@ summary::-webkit-details-marker {
 }
 
 details[open] {
-    border-color: #007bff;
+    border-color: white;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 details p {
-    margin-top: 10px;
-    color: #555;
+    margin-top: 30px;
+    color: white;
     line-height: 1.5;
 }
 
