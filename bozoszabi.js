@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', lerpelFestmenysz);
 const container = document.getElementById('parallaxContainer');
 const images = document.querySelectorAll('.parallax-image');
 
-let speed = 1; // pixel/másodperc
+let speed = 1.2; // pixel/másodperc
 let paused = false;
 
 function animate() {
